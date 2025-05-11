@@ -13,7 +13,7 @@ const Login = () => {
         setError('');
 
         try {
-            const response = await axios.post('https://localhost:44305/api/Login/search', {
+            const response = await axios.post(process.env.REACT_APP_API_BASE_URL + '/Login/search', {
                 userName,
                 password,
             });

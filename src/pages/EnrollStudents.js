@@ -23,7 +23,7 @@ const EnrollStudents = () => {
                 }
 
                 // Fetch students list
-                const studentsResponse = await axios.get('https://localhost:44305/api/Student/list', {
+                const studentsResponse = await axios.get(process.env.REACT_APP_API_BASE_URL + '/Student/list', {
                     headers: {
                         Authorization: `Bearer ${token}`, // Add token to headers
                     },
@@ -31,7 +31,7 @@ const EnrollStudents = () => {
                 setStudents(studentsResponse.data.data.items);
 
                 // Fetch vaccination drives list
-                const drivesResponse = await axios.get('https://localhost:44305/api/VaccinationDrive/list', {
+                const drivesResponse = await axios.get(process.env.REACT_APP_API_BASE_URL + '/VaccinationDrive/list', {
                     headers: {
                         Authorization: `Bearer ${token}`, // Add token to headers
                     },
@@ -66,7 +66,7 @@ const EnrollStudents = () => {
             }
 
             // API call to insert or update the mapping between student and vaccination drive
-            const response = await axios.post('https://localhost:44305/api/VaccinationStudentMapper/insertupdate', {
+            const response = await axios.post(process.env.REACT_APP_API_BASE_URL + '/VaccinationStudentMapper/insertupdate', {
                 flag: 1,
                 studentUniqueId: selectedStudent,
                 vaccinationDriveUniuqId: selectedDrive,

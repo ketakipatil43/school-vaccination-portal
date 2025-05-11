@@ -21,7 +21,7 @@ const ManageVaccinationDrives = () => {
     const fetchDrives = async () => {
         try {
             const token = localStorage.getItem('token');
-            const res = await axios.get('https://localhost:44305/api/VaccinationDrive/list', {
+            const res = await axios.get(process.env.REACT_APP_API_BASE_URL + '/VaccinationDrive/list', {
                 headers: {
                     Authorization: `Bearer ${token}`
                 }
@@ -77,7 +77,7 @@ const ManageVaccinationDrives = () => {
 
         try {
             const token = localStorage.getItem('token');
-            await axios.post('https://localhost:44305/api/VaccinationDrive/insertupdate', payload, {
+            await axios.post(process.env.REACT_APP_API_BASE_URL + '/VaccinationDrive/insertupdate', payload, {
                 headers: {
                     Authorization: `Bearer ${token}`,
                     'Content-Type': 'application/json'

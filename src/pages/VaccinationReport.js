@@ -19,7 +19,7 @@ const VaccinationReport = () => {
 
     const fetchVaccines = async () => {
         try {
-            const response = await axios.get('https://localhost:44305/api/VaccinationDrive/list', {
+            const response = await axios.get(process.env.REACT_APP_API_BASE_URL + '/VaccinationDrive/list', {
                 headers: { Authorization: `Bearer ${token}` },
             });
             setVaccines(response.data.data.items);
@@ -31,7 +31,7 @@ const VaccinationReport = () => {
     const fetchStudents = async () => {
         try {
             const response = await axios.get(
-                'https://localhost:44305/api/Student/list',
+                process.env.REACT_APP_API_BASE_URL + '/Student/list',
                 {
                     params: {
                         isFilterApplied: true,

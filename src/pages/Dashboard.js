@@ -21,7 +21,7 @@ const Dashboard = () => {
                 }
 
                 // Fetching aggregated data from the backend API with token in Authorization header
-                const response = await axios.get('https://localhost:44305/api/dashboard/list', {
+                const response = await axios.get(process.env.REACT_APP_API_BASE_URL + '/dashboard/list', {
                     headers: {
                         Authorization: `Bearer ${token}`,
                     },

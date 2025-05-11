@@ -20,7 +20,7 @@ const ManageStudents = () => {
     const fetchStudents = async () => {
         try {
             const token = localStorage.getItem('token');
-            const response = await axios.get('https://localhost:44305/api/student/list', {
+            const response = await axios.get(process.env.REACT_APP_API_BASE_URL + '/student/list', {
                 headers: {
                     Authorization: `Bearer ${token}`,
                 },
@@ -68,7 +68,7 @@ const ManageStudents = () => {
 
         try {
             const token = localStorage.getItem('token');
-            await axios.post('https://localhost:44305/api/Student/insertupdate', payload, {
+            await axios.post(process.env.REACT_APP_API_BASE_URL + '/Student/insertupdate', payload, {
                 headers: {
                     Authorization: `Bearer ${token}`,
                     'Content-Type': 'application/json',
