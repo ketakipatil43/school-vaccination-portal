@@ -2,6 +2,13 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## in the .env file update your api end point accordingly
+# Port on which the React app will run
+PORT=3000
+
+# Backend API base URL
+REACT_APP_API_BASE_URL=https://localhost:44305/api  >>Refer your swagger portnumber for this
+
 ## Available Scripts
 
 In the project directory, you can run:
